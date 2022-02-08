@@ -1,0 +1,21 @@
+<div class="auth-content">
+    <mat-card>
+        <mat-card-content>
+            <form #f="ngForm" (ngSubmit)="login(f.value)">
+                <p>Login To Continue</p>
+                <mat-form-field appearance="fill">
+                    <input matInput type="email" placeholder="Username" ngModel name="username"
+                    required minlength="3" appUserValidator #c="ngModel">
+                    <mat-error *ngIf="c.errors?.['onlyLatters']">{{c.errors?.['onlyLatters']}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <input matInput type="password" placeholder="Password" ngModel name="password" required>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Log In</button>
+                <a mat-button [routerLink]="['/signup']">Sign Up</a>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

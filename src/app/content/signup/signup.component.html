@@ -1,0 +1,31 @@
+<div class="auth-content">
+    <mat-card>
+        <mat-card-content>
+            <div [formGroup]="signupForm" >
+                <p>Sign Up To Continue</p>
+                <mat-form-field appearance="fill">
+                    <input matInput type="text" placeholder="Username" ngModel name="username"
+                        formControlName="username">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <input matInput type="email" placeholder="email" ngModel name="username" formControlName="email">
+                </mat-form-field>
+
+                <div formGroupName="password">
+                    <mat-form-field appearance="fill">
+                        <input matInput type="password" placeholder="Password" ngModel name="password" formControlName="password">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <input matInput type="password" placeholder="Confirm Password" ngModel name="password" required formControlName="cpassword" >
+                    </mat-form-field>
+                </div>
+
+
+                <button mat-raised-button color="primary" (click)="signup(signupForm.value)" [disabled]="signupForm.invalid">Sign Up</button>
+                <a mat-button [routerLink]="['/login']">Log In</a>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

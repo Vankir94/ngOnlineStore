@@ -1,0 +1,16 @@
+<p>
+    <mat-toolbar fxLayoutAlign="space-between center"  color="primary">
+        <div>
+            <button (click)="drawer?.toggle()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="my_class">{{title}}</span>
+        </div>
+
+        <div [style.margin-right.px]="25">
+            <button mat-fab color="primary" [style.margin-right.px]="10" [routerLink]="['/login']">LogIn</button>
+            <button mat-icon-button [routerLink]="['/signup']">SignUp</button>
+        </div>
+    </mat-toolbar>
+</p>

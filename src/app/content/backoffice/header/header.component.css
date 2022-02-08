@@ -1,0 +1,10 @@
+p {
+    margin: 0;
+}
+
+a.text:active,
+a.text:hover,
+a.text {
+    text-decoration: none;
+    color: #666;
+}

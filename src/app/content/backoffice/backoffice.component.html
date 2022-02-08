@@ -1,0 +1,5 @@
+<app-header [title]="title" [drawer]="drawer"></app-header>
+<app-side-menu (setsideNavControl)="setSideNav($event)">
+    <router-outlet></router-outlet>
+</app-side-menu>
+
