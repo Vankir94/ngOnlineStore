@@ -1,0 +1,8 @@
+<app-cart-product
+[style.padding.px]="15"
+*ngFor="let product of products$ | async; trackBy: trackByFn"
+[product]="product"
+(incriment)="incriment(product)"
+(decriment)="decriment(product)"
+(remove)="remove(product)"
+></app-cart-product>

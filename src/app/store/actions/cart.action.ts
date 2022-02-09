@@ -16,7 +16,7 @@ export const incrimentProducInCart = createAction(
     props<{ id: string }>()
 );
 
-export const DecrimentProducInCart = createAction(
+export const decrimentProducInCart = createAction(
     '[Cart] Decriment product in cart',
     props<{ id: string }>()
 );

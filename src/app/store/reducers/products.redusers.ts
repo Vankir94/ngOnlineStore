@@ -1,6 +1,6 @@
-import { Action, createReducer, on, State } from "@ngrx/store";
+import { Action, createReducer, on } from "@ngrx/store";
 import { IProduct } from "src/app/data";
-import { getProducsPending, getProducsSuccess } from "../actions/products.action";
+import { getProducsSuccess } from "../actions/products.action";
 
 const initialState: IProduct[] = [];
 
@@ -20,3 +20,4 @@ export const scoreboardReducer = createReducer(
 export default function reducer(state: any, action: Action): any {
     return scoreboardReducer(state, action);
 }
+

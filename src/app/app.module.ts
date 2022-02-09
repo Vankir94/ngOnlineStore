@@ -13,7 +13,6 @@ import { reducers } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { ProductsEffects } from './store/effects/products.effects';
 import { effects } from './store/effects';
 
 @NgModule({
@@ -27,7 +26,7 @@ import { effects } from './store/effects';
     HttpClientModule,
     ModalModule.forRoot(),
     AppRoutingModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, {runtimeChecks: { strictActionImmutability: false, strictStateImmutability: false}}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

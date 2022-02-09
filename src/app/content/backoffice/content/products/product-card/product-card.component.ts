@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { IProduct } from 'src/app/data';
 import { MadalService } from 'src/app/modal/madal.service';
+import { IState } from 'src/app/store';
+import { addProducToCart } from 'src/app/store/actions/cart.action';
 
 @Component({
   selector: 'app-product-card',
@@ -15,7 +18,8 @@ export class ProductCardComponent implements OnInit {
   public product!: IProduct;
 
   constructor(
-    private madalService: MadalService
+    private madalService: MadalService,
+    private store: Store<IState>
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +42,7 @@ export class ProductCardComponent implements OnInit {
         product: {...this.product},
         save: () => {
           console.log('Save');
+          this.store.dispatch(addProducToCart({product: this.product}));
           this.madalService.close();
         },
         close: () => {

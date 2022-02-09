@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { Store } from '@ngrx/store';
+import { IState } from 'src/app/store';
+import { totalProducts } from 'src/app/store/reducers/cart.redusers';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +20,11 @@ export class HeaderComponent implements OnInit {
   @Input()
   public drawer!: MatDrawer;
 
-  constructor() { }
+  public cartProductCount = this.store.select(totalProducts);
+
+  constructor(
+    private store: Store<IState>
+  ) { }
 
   ngOnInit(): void {
   }

@@ -12,5 +12,8 @@
             <button mat-fab color="primary" [style.margin-right.px]="10" [routerLink]="['/login']">LogIn</button>
             <button mat-icon-button [routerLink]="['/signup']">SignUp</button>
         </div>
+        <mat-icon [style.margin-right.px]="20" [routerLink]="['/backoffice/cart']"
+        [matBadge]="cartProductCount | async" matBadgeColor="warn"
+        >shopping_cart</mat-icon>
     </mat-toolbar>
 </p>
