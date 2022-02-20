@@ -62,5 +62,6 @@ export class ModalComponent implements OnInit {
   }
 
   public save(): void {
+    console.log();
   }
 }
